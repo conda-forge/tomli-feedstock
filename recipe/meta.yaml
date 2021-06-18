@@ -21,6 +21,7 @@ requirements:
     - poetry
     - python >=3.6
   run:
+    - flit-core
     - python >=3.6
     - toml
     - tomlkit

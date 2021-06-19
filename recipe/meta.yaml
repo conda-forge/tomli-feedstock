@@ -1,5 +1,5 @@
 {% set name = "tomli" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tomli-{{ version }}.tar.gz
-  sha256: 597db31e0350ef52f55595244ab74915daf8c03c8bda7bfb61a4297ab01f98fe
+  sha256: f31ed0c991039fce3af8379b70a081e15012bd058288355932e5f367df23d187
 
 build:
   number: 0
@@ -17,11 +17,14 @@ build:
 
 requirements:
   host:
+    - flit-core
     - pip
     - poetry
     - python >=3.6
   run:
     - python >=3.6
+    - toml
+    - tomlkit
 
 test:
   imports:

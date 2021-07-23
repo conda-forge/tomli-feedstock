@@ -1,5 +1,5 @@
 {% set name = "tomli" %}
-{% set version = "1.0.4" %}
+{% set version = "1.1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tomli-{{ version }}.tar.gz
-  sha256: be670d0d8d7570fd0ea0113bd7bb1ba3ac6706b4de062cc4c952769355c9c268
+  sha256: 33d7984738f8bb699c9b0a816eb646a8178a69eaa792d258486776a5d21b8ca5
 
 build:
   number: 0
@@ -23,8 +23,6 @@ requirements:
     - python >=3.6
   run:
     - python >=3.6
-    - toml
-    - tomlkit
 
 test:
   imports:

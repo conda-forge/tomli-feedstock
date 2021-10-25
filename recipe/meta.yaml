@@ -7,17 +7,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tomli-{{ version }}.tar.gz
-  sha256: c6ce0015eb38820eaf32b5db832dbc26deb3dd427bd5f6556cf0acac2c214fee
+  - folder: tomli
+    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tomli-{{ version }}.tar.gz
+    sha256: c6ce0015eb38820eaf32b5db832dbc26deb3dd427bd5f6556cf0acac2c214fee
+  - folder: flit-core
+    url: https://github.com/takluyver/flit/archive/refs/tags/3.4.0.tar.gz
+    sha256: 7d5482cfa6ff2a58282d8f102566d03caa91807b70534ed3abdd5ac6123dbfdb
+    
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - {{ PYTTHON }} ./flit-core/build_dists.py
+    - {{ PYTHON }} -m pip install ./tomli/. -vv
 
 requirements:
   host:
-    - flit-core
     - pip
     - python >=3.6
   run:

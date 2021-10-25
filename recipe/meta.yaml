@@ -20,7 +20,7 @@ build:
   noarch: python
   script:
     - ls ./flit-core
-    - {{ PYTHON }} ./flit-core/flit-3.4.0/flit_core/build_dists.py
+    - {{ PYTHON }} ./flit-core/flit_core/build_dists.py
     - {{ PYTHON }} -m pip install ./tomli/. -vv
 
 requirements:

@@ -21,7 +21,7 @@ build:
   script:
     - {{ PYTHON }} ./flit-core/flit_core/build_dists.py
     - ls ./flit-core
-    - {{ PYTHON }} -m pip install ./flit-core/flit_core/dist/. -vv
+    - {{ PYTHON }} -m pip install ./flit-core/flit_core/dist/flit_core-3.4.0-py3-none-any.whl -vv
     - {{ PYTHON }} -m pip install ./tomli/. -vv
 
 requirements:

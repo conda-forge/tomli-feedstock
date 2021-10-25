@@ -17,6 +17,7 @@ build:
 
 requirements:
   host:
+    # Cannot use flit-core >3.3.0 due to cyclic dependency
     - flit-core 3.3.0
     - pip
     - python >=3.6

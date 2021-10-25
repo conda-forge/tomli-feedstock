@@ -19,8 +19,9 @@ build:
   number: 0
   noarch: python
   script:
-    - ls ./flit-core
     - {{ PYTHON }} ./flit-core/flit_core/build_dists.py
+    - ls ./flit-core
+    - {{ PYTHON }} -m pip install ./flit-core/flit_core/dist/. -vv
     - {{ PYTHON }} -m pip install ./tomli/. -vv
 
 requirements:

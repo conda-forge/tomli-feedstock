@@ -11,7 +11,7 @@ source:
   sha256: c292c34f58502a1eb2bbb9f5bbc9a5ebc37bee10ffb8c2d6bbdfa8eb13cc14e1
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -20,9 +20,9 @@ requirements:
     # Cannot use flit-core >3.3.0 due to cyclic dependency
     - flit-core 3.3.0
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
-    - python >=3.6
+    - python >=3.7
 
 test:
   imports:

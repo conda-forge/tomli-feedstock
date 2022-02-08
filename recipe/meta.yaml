@@ -1,5 +1,5 @@
 {% set name = "tomli" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tomli-{{ version }}.tar.gz
-  sha256: c292c34f58502a1eb2bbb9f5bbc9a5ebc37bee10ffb8c2d6bbdfa8eb13cc14e1
+  sha256: de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 

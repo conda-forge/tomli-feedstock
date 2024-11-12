@@ -18,7 +18,7 @@ build:
 requirements:
   host:
     # Cannot use flit-core >3.3.0 due to cyclic dependency
-    - flit-core 3.3.0
+    - flit-core >=3.2.0,<4
     - pip
     - python {{ python_min }}
   run:

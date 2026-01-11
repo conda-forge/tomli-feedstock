@@ -3,11 +3,13 @@ About tomli-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tomli-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/hukkin/tomli
+Home: https://pypi.org/project/tomli
 
 Package license: MIT
 
 Summary: A simple TOML parser
+
+Development: https://github.com/hukkin/tomli
 
 Current build status
 ====================

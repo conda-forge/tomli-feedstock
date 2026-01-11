@@ -3,6 +3,7 @@ schema_version: 1
 
 context:
   version: "2.4.0"
+  python_check_max: "3.14"
 
 package:
   name: tomli
@@ -32,13 +33,14 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
 
 about:
   summary: A simple TOML parser
   license: MIT
   license_file: LICENSE
-  homepage: https://github.com/hukkin/tomli
+  homepage: https://pypi.org/project/tomli
+  repository: https://github.com/hukkin/tomli
 
 extra:
   recipe-maintainers:

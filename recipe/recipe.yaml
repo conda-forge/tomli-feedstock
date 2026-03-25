@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.4.0"
+  version: "2.4.1"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/t/tomli/tomli-${{ version }}.tar.gz
-  sha256: aa89c3f6c277dd275d8e243ad24f3b5e701491a860d5121f2cdd399fbb31fc9c
+  sha256: 7c7e1a961a0b2f2472c1ac5b69affa0ae1132c39adcb67aba98568702b9cc23f
 
 build:
   number: 0

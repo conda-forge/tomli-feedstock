@@ -17,17 +17,22 @@ build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
-    - flit-core >=3.12.0,<4
+    - flit-core >=3.12,<5
     - pip
     - python ${{ python_min }}.*
   run:
     - python >=${{ python_min }}
 
 tests:
+  - package_contents:
+      strict: true
+      site_packages:
+        - tomli/**
+        - tomli-${{ version }}.dist-info/**
   - python:
       imports: tomli
       pip_check: true

@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.4.1"
+  version: "2.5.0"
   python_check_max: "3.14"
 
 package:
@@ -10,24 +10,29 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/t/tomli/tomli-${{ version }}.tar.gz
-  sha256: 7c7e1a961a0b2f2472c1ac5b69affa0ae1132c39adcb67aba98568702b9cc23f
+  url: https://files.pythonhosted.org/packages/source/t/tomli/tomli-${{ version }}.tar.gz
+  sha256: 264507556cd8b8c8e7c6ee037cdf443a463f03f4c958e57195e3d369711b8ff6
 
 build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
-    - flit-core >=3.12.0,<4
+    - flit-core >=3.12,<5
     - pip
     - python ${{ python_min }}.*
   run:
     - python >=${{ python_min }}
 
 tests:
+  - package_contents:
+      strict: true
+      site_packages:
+        - tomli/**
+        - tomli-${{ version }}.dist-info/**
   - python:
       imports: tomli
       pip_check: true
